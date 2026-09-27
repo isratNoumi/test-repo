@@ -4,4 +4,5 @@ version = "0.1.0"
 dependencies = [
     "requests==2.6.0",
     "pyyaml==5.3.1",
+    "axios": "0.21.0",
 ]
