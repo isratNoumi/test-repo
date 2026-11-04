@@ -1,1 +1,0 @@
-"""Build Mart backend application."""
