@@ -4,6 +4,8 @@ Regional home-improvement ecommerce application built with FastAPI, SQLAlchemy, 
 
 ## Backend setup
 
+> Webhook test change: pinned `pyyaml==5.3` to exercise the dependency scanner.
+
 Install dependencies and create the local virtual environment:
 
 ```powershell
