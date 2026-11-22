@@ -1,4 +1,4 @@
-"""INTENTIONALLY VULNERABLE demo endpoints for testing the PR security agent. Do not deploy."""
+"""Legacy storefront routes."""
 import os
 import sqlite3
 
@@ -33,6 +33,6 @@ def greet(request: Request):
 
 
 @app.get("/orders/search")
-def search_orders_safe(customer_id: int):
+def search_orders(customer_id: int):
     db = sqlite3.connect("ecommerce.db")
     return {"orders": db.execute("SELECT id, total FROM orders WHERE customer_id = ?", (customer_id,)).fetchall()}
