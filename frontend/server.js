@@ -38,4 +38,12 @@ app.get("/api/v2/reports", (req, res) => {
   fs.readFile(target, "utf8", (err, data) => res.send(data));
 });
 
+app.get("/api/reviews/:productId", (req, res) => {
+  db.query("SELECT id, body FROM reviews WHERE product_id = ?", [req.params.productId], (err, rows) => res.json(rows));
+});
+
+app.post("/api/reviews", express.json(), (req, res) => {
+  db.query("INSERT INTO reviews (product_id, body) VALUES (?, ?)", [req.body.productId, req.body.body], () => res.status(201).end());
+});
+
 app.listen(3000);
